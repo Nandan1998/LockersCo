@@ -48,7 +48,7 @@ public class Lockers {
 			System.out.println("\nOption 1: Add a file to the existing list");
 			System.out.println("\nOption 2: Delete a chosen file from the directory");
 			System.out.println("\nOption 3: Search a specified file in the directory");
-			System.out.println("\nOption 4: Return to the main menu");
+			System.out.println("\nOption 4: Return to the main menu"); 
 			break;
 			
 		case 3:
