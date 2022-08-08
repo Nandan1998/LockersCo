@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Lockers {
+	
 
 	public static void main(String[] args) throws IOException{
 		
@@ -23,6 +24,8 @@ public class Lockers {
 		System.out.println("\nOption 1: Show current files");
 		System.out.println("\nOption 2: Interface options");
 		System.out.println("\nOption 3: Close the application");
+		
+		
 		
 		//Sub Menu
 		Scanner sc = new Scanner(System.in);
@@ -48,17 +51,39 @@ public class Lockers {
 			System.out.println("\nOption 1: Add a file to the existing list");
 			System.out.println("\nOption 2: Delete a chosen file from the directory");
 			System.out.println("\nOption 3: Search a specified file in the directory");
-			System.out.println("\nOption 4: Return to the main menu"); 
+			System.out.println("\nOption 4: Return to the main menu");  
+			
+			//option 1 - add a new file to existing directory
+			
+			Scanner sc3 = new Scanner(System.in);
+			int option1 = sc.nextInt();
+			
+			switch(option1) {
+			case 1:
+				
+				//code for creating new file
+				try {
+					 File myObj = new File("/home/raghunandanj007/eclipse-workspace/Test/src/testPack/demo2.txt"); 
+					 
+					 if (myObj.createNewFile()) {  
+					        System.out.println("File created: " + myObj.getName());  
+					        System.out.println("Absolute path: " + myObj.getAbsolutePath());  
+					      } else {  
+					        System.out.println("File already exists.");  
+					      }  
+					    } catch (IOException e) {
+					      System.out.println("An error occurred.");
+					      e.printStackTrace();  
+					    }  
 			break;
 			
 		case 3:
-			System.exit(0);
+			System.exit(1);
 			break;
 		}
 			
 	
 
-
-
-}
+		}
+	}
 }
