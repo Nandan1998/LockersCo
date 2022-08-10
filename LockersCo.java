@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class LockersCo {
-	
+	 
 	// Main directory 
 	static final String Directory = "/home/raghunandanj007/eclipse-workspace/Test/src/testPack/";
 
