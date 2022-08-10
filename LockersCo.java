@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class LockersCo {
 	
-	// Main directory
+	// Main directory 
 	static final String Directory = "/home/raghunandanj007/eclipse-workspace/Test/src/testPack/";
 
 	public static void Menu() {
