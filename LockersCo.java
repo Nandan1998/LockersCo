@@ -15,7 +15,7 @@ public class LockersCo {
 	public static void Menu() {
 		// Main Menu
 		System.out.println("\nPlease choose one of the options below:- ");
-		System.out.println("\nOption 1: Show files in the curent directory");
+		System.out.println("\nOption 1: Show files in the current directory");
 		System.out.println("\nOption 2: Interface options");
 		System.out.println("\nOption 3: Close the application");
 	}
@@ -28,9 +28,8 @@ public class LockersCo {
 		System.out.println("\nChoose one of the above options");
 	}
 
+	// code for displaying all files in the current directory
 	public static void CurrentFiles() {
-		// code for displaying all files in the current directory
-		// List of all files and directories
 		File directoryPath = new File("/home/raghunandanj007/eclipse-workspace/Test/src/testPack");
 		ArrayList<String> dp = new ArrayList<String>(Arrays.asList(directoryPath.list()));
 		Collections.sort(dp);
@@ -50,6 +49,35 @@ public class LockersCo {
 			e.printStackTrace();
 		}
 	}
+	
+	// method to delete a file
+	public static void deleteFile(Scanner sc) {
+		System.out.println("\nEnter name of the file to be deleted");
+		String input = sc.next();
+		File file = new File(Directory + input);
+		try {
+			if (file.delete()) {
+				System.out.println(file.getName() + " has been deleted successfully");
+			} else {
+				System.out.println("File not found in the directory");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//search for a specific file
+	public static void fileSearch(Scanner sc) {
+		System.out.println("\nEnter name of the file to search");
+		String input = sc.next();
+		File file = new File(Directory + input);
+		input = new String(input);
+		if (file.exists()) {
+			System.out.println("\n The File " + file.getName() + " has been found");
+		} else {
+			System.out.println("\nThe File " + file.getName() + " does not seem to exist");
+		}
+	}
 
 
 	public static void main(String[] args) {
@@ -61,25 +89,38 @@ public class LockersCo {
 		System.out.println("\nDesignation: Full Stack Developer");
 		System.out.println("\nCompany : Lockers Pvt Ltd");
 
-		File file = new File(Directory);
-		String[] fileNames = file.list();
-
 		// calling first menu
 		Menu();
 		Scanner MM = new Scanner(System.in);
 		int menu = MM.nextInt();
 		if (menu == 1) {
 			CurrentFiles();
+			System.exit(0);
 		} else if (menu == 2) {
 			InterfaceMenu();
 		} else if (menu == 3) {
 			System.out.println("Closing application...See you next time");
 			System.exit(0);
-	}
+		}else {
+			System.out.println("\nYou have entered an invalid choice");
+			Menu();
+			MM.close();
+		}
 		Scanner sc = new Scanner(System.in);
 		int input = sc.nextInt();
 		if (input == 1) {
 			addFile(sc);
-		}
+		} else if (input == 2) {
+			deleteFile(sc);
+		} else if (input == 3) {
+			fileSearch(sc);
+		} else if(input ==4)
+			System.out.println("\nReturning to main menu");
+			Menu();
+		} 
+			
+		
+			
+		
 }
-}
+
