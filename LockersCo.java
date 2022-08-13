@@ -93,18 +93,20 @@ public class LockersCo {
 		Menu();
 		Scanner MM = new Scanner(System.in);
 		int menu = MM.nextInt();
-		if (menu == 1) {
-			CurrentFiles();
-			System.exit(0);
-		} else if (menu == 2) {
-			InterfaceMenu();
-		} else if (menu == 3) {
-			System.out.println("Closing application...See you next time");
-			System.exit(0);
-		}else {
-			System.out.println("\nYou have entered an invalid choice");
-			Menu();
-			MM.close();
+		while (menu <= 3) {
+			if (menu == 1) {
+				CurrentFiles();
+				System.exit(0);
+			} else if (menu == 2) {
+				InterfaceMenu();
+			} else if (menu == 3) {
+				System.out.println("Closing application...See you next time");
+				System.exit(0);
+			} else {
+				System.out.println("\nYou have entered an invalid choice");
+				Menu();
+				MM.close();
+			}
 		}
 		Scanner sc = new Scanner(System.in);
 		int input = sc.nextInt();
@@ -117,10 +119,6 @@ public class LockersCo {
 		} else if(input ==4)
 			System.out.println("\nReturning to main menu");
 			Menu();
-		} 
-			
-		
-			
-		
+		} 		
 }
 
